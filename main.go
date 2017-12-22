@@ -84,11 +84,13 @@ func load(t *iptree.IPTree) {
 	split(t, "172.16.0.0/12", 12)
 	split(t, "192.168.0.0/16", 16)
 
-	split(t, "200.99.0.0/16", 21)
-	split(t, "200.162.0.0/17", 21)
-	split(t, "200.198.64.0/18", 21)
-	split(t, "200.202.112.0/20", 21)
-	split(t, "201.84.0.0/15", 21)
+	plen := uint(24)
+
+	split(t, "200.99.0.0/16", plen)
+	split(t, "200.162.0.0/17", plen)
+	split(t, "200.198.64.0/18", plen)
+	split(t, "200.202.112.0/20", plen)
+	split(t, "201.84.0.0/15", plen)
 
 	fmt.Printf("# reading subnets from stdin - begin\n")
 
